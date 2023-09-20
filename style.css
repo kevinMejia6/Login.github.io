@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+html {
+  height: 100%;
+}
+body {
+  background-image: url("./Imagenes/wave.svg");
+  background-size: cover;
+  background-attachment: fixed;
+  /* background-repeat:; */
+  font-family: 'Montserrat', sans-serif;
+  animation: waveAnimation 30s infinite linear;
+}
+
+@keyframes waveAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: url("./Imagenes/mobilewave.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    animation: waveAnimationMobile 10s infinite linear;
+  }
+
+  @keyframes waveAnimationMobile {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+
+.logo {
+  width: 100%;
+}
+
+.material-textfield {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: gray;
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  transition: 0.1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+}
+
+input {
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem 0.7rem;
+  color: gray;
+  transition: 0.1s ease-out;
+}
+
+input:focus {
+  border-color: #415ae5;
+}
+
+input:focus + label {
+  color: #415ae5;
+  top: 0;
+  transform: translateY(-50%) scale(0.9) !important;
+}
+
+input:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.9) !important;
+}
+
+input:not(:focus)::placeholder {
+  opacity: 0;
+}
+.redondeo {
+  padding: 13px;
+}
+.card {
+  border-radius: 23px;
+}
+.fila {
+  height: 97% !important;
+}
+
+.custom-outline-button {
+  border-color: #5000ca;
+  color: #5000ca;
+}
+
+.custom-outline-button:hover {
+  background-color: #5000ca;
+  color: white;
+}
+
